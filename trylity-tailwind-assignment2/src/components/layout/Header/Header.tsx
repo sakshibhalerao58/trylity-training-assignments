@@ -1,66 +1,68 @@
 import { useState } from "react";
+
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import HeaderButtons from "./HeaderButtons";
 import MobileMenu from "./MobileMenu";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-[#ececf1] bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-[64px] max-w-[1376px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Logo />
 
         <Navigation />
 
-        <HeaderButtons />
+        <div className="hidden lg:block">
+          <HeaderButtons />
+        </div>
 
         <button
           type="button"
-          onClick={() => setIsMenuOpen((previous) => !previous)}
-          className="rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 lg:hidden"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
         >
-          {isMenuOpen ? (
+          {menuOpen ? (
             <svg
-              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              strokeWidth="2"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path d="M6 6l12 12" />
+              <path d="M18 6L6 18" />
             </svg>
           ) : (
             <svg
-              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24"
+              strokeWidth="2"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path d="M4 7h16" />
+              <path d="M4 12h16" />
+              <path d="M4 17h16" />
             </svg>
           )}
         </button>
       </div>
 
       <MobileMenu
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
       />
     </header>
   );
-};
+}
 
 export default Header;

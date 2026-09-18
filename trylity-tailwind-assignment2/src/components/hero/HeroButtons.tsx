@@ -1,49 +1,68 @@
-const HeroButtons = () => {
+function HeroButtons() {
   return (
-    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+    <div className="mt-6 flex flex-wrap gap-3">
+
       <a
         href="#get-started"
-        className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-xl"
+        className="inline-flex h-[48px] items-center justify-center gap-3 rounded-[7px] bg-[#5844df] px-6 text-[13px] font-semibold text-white shadow-[0_8px_20px_rgba(88,68,223,0.18)] transition hover:bg-[#4e3bd1]"
       >
         Get Started Free
 
-        <svg
-          className="h-4 w-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 7l5 5m0 0l-5 5m5-5H6"
-          />
-        </svg>
+        <span className="text-[18px]">
+          →
+        </span>
       </a>
 
       <a
         href="#features"
-        className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition duration-200 hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-600"
+        className="inline-flex h-[48px] items-center justify-center gap-3 rounded-[7px] border border-[#dce0e8] bg-white px-6 text-[13px] font-semibold text-[#172033] shadow-sm transition hover:border-[#bdb4f5] hover:text-[#5b45df]"
       >
         See Features
 
         <svg
-          className="h-4 w-4"
+          viewBox="0 0 24 24"
+          className="h-[14px] w-[14px]"
           fill="none"
           stroke="currentColor"
-          viewBox="0 0 24 24"
+          strokeWidth="1.8"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
+          <rect
+            x="4"
+            y="4"
+            width="6"
+            height="6"
+            rx="1"
+          />
+
+          <rect
+            x="14"
+            y="4"
+            width="6"
+            height="6"
+            rx="1"
+          />
+
+          <rect
+            x="4"
+            y="14"
+            width="6"
+            height="6"
+            rx="1"
+          />
+
+          <rect
+            x="14"
+            y="14"
+            width="6"
+            height="6"
+            rx="1"
           />
         </svg>
+
       </a>
+
     </div>
   );
-};
+}
 
 export default HeroButtons;

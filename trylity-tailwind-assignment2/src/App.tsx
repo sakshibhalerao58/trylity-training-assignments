@@ -1,11 +1,16 @@
 import Header from "./components/layout/Header/Header";
 import Hero from "./components/hero/Hero";
+import Features from "./components/features/Features";
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Hero />
+
+      <main>
+        <Hero />
+        <Features />
+      </main>
     </div>
   );
 }

@@ -1,10 +1,11 @@
-const HeroDescription = () => {
+function HeroDescription() {
   return (
-    <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-      Connect with your customers, automate conversations, and grow your
-      business with a powerful communication platform built for modern teams.
+    <p className="mt-5 max-w-[570px] text-[14px] leading-[1.65] text-[#596477]">
+      TryLity helps businesses automate WhatsApp conversations,
+      support customers better, and grow faster with smart
+      automation tools.
     </p>
   );
-};
+}
 
 export default HeroDescription;

@@ -1,55 +1,31 @@
-import NavItem from "./NavItem";
+import Navigation from "./Navigation";
+import HeaderButtons from "./HeaderButtons";
 
 interface MobileMenuProps {
-  isOpen: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  if (!isOpen) {
+function MobileMenu({
+  open,
+  onClose,
+}: MobileMenuProps) {
+  if (!open) {
     return null;
   }
 
-  const navigationItems = [
-    { label: "Home", href: "#home" },
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ];
-
   return (
     <div className="border-t border-slate-100 bg-white px-5 py-5 shadow-lg lg:hidden">
-      <nav className="flex flex-col gap-5">
-        {navigationItems.map((item) => (
-          <NavItem
-            key={item.label}
-            label={item.label}
-            href={item.href}
-            onClick={onClose}
-          />
-        ))}
+      <Navigation
+        mobile
+        onNavigate={onClose}
+      />
 
-        <div className="flex flex-col gap-3 border-t border-slate-100 pt-4">
-          <a
-            href="#login"
-            onClick={onClose}
-            className="rounded-lg px-4 py-3 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100"
-          >
-            Login
-          </a>
-
-          <a
-            href="#get-started"
-            onClick={onClose}
-            className="rounded-lg bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-700"
-          >
-            Get Started
-          </a>
-        </div>
-      </nav>
+      <div className="mt-4 border-t border-slate-100 pt-4">
+        <HeaderButtons onAction={onClose} />
+      </div>
     </div>
   );
-};
+}
 
 export default MobileMenu;

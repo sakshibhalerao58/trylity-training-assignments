@@ -1,24 +1,24 @@
-interface LogoProps {
-  onClick?: () => void;
-}
-
-const Logo = ({ onClick }: LogoProps) => {
+function Logo() {
   return (
     <a
       href="#home"
-      onClick={onClick}
-      className="flex items-center gap-2"
-      aria-label="TryLity Home"
+      className="flex items-center gap-2.5"
+      aria-label="TryLity"
     >
-      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-lg font-bold text-white shadow-md shadow-indigo-200">
-        T
+      {/* Logo icon */}
+      <div className="relative h-8 w-8">
+        <div className="absolute left-[1px] top-[7px] h-[18px] w-[18px] rounded-[5px] bg-[#5b45df]" />
+
+        <div className="absolute right-0 top-0 h-[18px] w-[18px] rounded-[5px] bg-[#8c7ae8]" />
+
+        <div className="absolute left-[4px] top-[11px] h-[10px] w-[4px] rounded-full bg-[#5b45df]" />
       </div>
 
-      <span className="text-xl font-bold tracking-tight text-slate-900">
-        Try<span className="text-indigo-600">Lity</span>
+      <span className="text-[21px] font-bold tracking-[-0.03em] text-[#111827]">
+        TryLity
       </span>
     </a>
   );
-};
+}
 
 export default Logo;

@@ -1,75 +1,167 @@
-# React + TypeScript + Vite
+# Vite React Project Setup & Basic Folder Structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
 
-Currently, two official plugins are available:
+This project is created as part of the Trylity training assignment **“Vite React Project Setup & Basic Folder Structure.”**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project demonstrates a clean and reusable React application structure using **Vite, React, and TypeScript**.
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* TypeScript
+* Vite
+* React Router
+* CSS
+* npm
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+trylity-vite-react-assignment1/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── cards/
+│   │   └── Card.tsx
+│   ├── components/
+│   ├── elements/
+│   │   └── Button.tsx
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   └── About.tsx
+│   ├── styles/
+│   │   └── global.css
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚙️ Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the Repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/sakshibhalerao58/trylity-training-assignments.git
 ```
+
+### 2. Navigate to the Assignment Folder
+
+```bash
+cd trylity-training-assignments/trylity-vite-react-assignment1
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+The application will run on a local URL provided by Vite, usually:
+
+```text
+http://localhost:5173/
+```
+
+If port 5173 is already in use, Vite automatically uses another available port such as `5174`.
+
+## 🔍 TypeScript Check
+
+To check the project for TypeScript errors:
+
+```bash
+npx tsc --noEmit
+```
+
+The command should complete without TypeScript errors.
+
+## 🏗️ Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The build generates the `dist/` folder.
+
+## ▶️ Preview Production Build
+
+```bash
+npm run preview
+```
+
+## ✨ Features
+
+* Vite + React + TypeScript setup
+* Reusable Header and Footer components
+* Reusable Button component
+* Reusable Card component
+* Type-safe component props using TypeScript
+* Home and About pages
+* React Router navigation
+* Responsive CSS styling
+* Clean and organized folder structure
+
+## 🧩 Reusable Components
+
+### Button
+
+The Button component accepts typed props such as:
+
+* `label`
+* `onClick`
+* `type`
+
+### Card
+
+The Card component accepts:
+
+* `title`
+* `description`
+* `buttonText`
+* `onButtonClick`
+
+This makes the components reusable across different pages.
+
+## 🧪 Project Verification
+
+The project was verified using:
+
+```bash
+npx tsc --noEmit
+```
+
+and
+
+```bash
+npm run build
+```
+
+Both commands completed successfully without errors.
+
+## 👩‍💻 Author
+
+**Sakshi Bhalerao**
+
+IT Engineering Student | MERN Stack Developer

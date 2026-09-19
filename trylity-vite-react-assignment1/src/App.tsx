@@ -1,25 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/layout/Header/Header";
+import Hero from "./components/hero/Hero";
+import Features from "./components/features/Features";
 
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Header />
+    <div className="h-screen overflow-hidden bg-white">
+      <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <main className="h-[calc(100vh-80px)]">
+        <Hero />
+        <Features />
+      </main>
+    </div>
   );
-};
+}
 
 export default App;

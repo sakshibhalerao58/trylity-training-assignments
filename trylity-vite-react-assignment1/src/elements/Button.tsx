@@ -1,9 +1,10 @@
 import type { ButtonProps } from "../types";
 
 const Button = ({
-  text,
+  children,
   onClick,
   type = "button",
+  className = "",
   disabled = false,
 }: ButtonProps) => {
   return (
@@ -11,9 +12,9 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className="button"
+      className={`rounded-lg bg-[#5b45e8] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#4d38d5] disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
     >
-      {text}
+      {children}
     </button>
   );
 };
